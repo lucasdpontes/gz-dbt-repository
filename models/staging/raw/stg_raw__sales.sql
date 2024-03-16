@@ -13,7 +13,8 @@ renamed as (
         orders_id,
         pdt_id AS products_id,
         revenue,
-        quantity
+        quantity,
+        CONCAT(orders_id,'_',pdt_id) AS orders_pdt_id
 
     from source
 
