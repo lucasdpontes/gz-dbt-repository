@@ -7,6 +7,6 @@ s.orders_id
 FROM {{ ref('stg_raw__ship')}} s
 LEFT JOIN {{ ref('int_orders_margin')}} o USING (orders_id)
 
-GROUP BY orders_id
+ORDER BY orders_id DESC
 
 --Operational margin = margin + shipping fee - log_cost - ship_cost
