@@ -1,5 +1,8 @@
 SELECT
-p.products_id
+s.date_date
+,s.revenue
+,s.orders_id
+,p.products_id
 ,p.purchase_price AS purchase_price
 ,CAST(s.quantity AS INT64) * CAST(p.purchase_price AS FLOAT64) AS purchase_cost
 ,ROUND(s.revenue - s.revenue*CAST(p.purchase_price AS FLOAT64),2) AS margin
