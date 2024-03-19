@@ -1,5 +1,7 @@
 SELECT
 s.date_date
+,s.quantity
+,s.date_date
 ,s.revenue
 ,s.orders_id
 ,p.products_id
