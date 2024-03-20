@@ -1,6 +1,8 @@
 SELECT
 o.orders_id
 ,o.date_date
+,o.revenue
+,o.margin
 ,ROUND((o.margin + s.shipping_fee - s.log_cost - CAST(s.ship_cost AS FLOAT64)),2) AS operational_margin
 ,o.quantity
 
