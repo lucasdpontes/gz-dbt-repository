@@ -66,15 +66,44 @@ sources:
 
           - name: ship_cost
             description: shipping cost paid by the company
-            
+
       - name: adwords
         identifier: raw_gz_adwords
+        columns:
+          - name: date_date
+            description: the campaign's release date
+
+          - name: campaign_key
+            description: the identifier of the campaign
+
+          - name: campaign_name
+            description: the campaign name
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key || '-' || campgn_name)"
+          - not_null:
+              column_name: "(date_date || '-' || campaign_key || '-' || campgn_name)"
       
       - name: bing
         identifier: raw_gz_bing
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key || '-' || campgn_name)"
+          - not_null:
+              column_name: "(date_date || '-' || campaign_key || '-' || campgn_name)"
       
       - name: facebook
         identifier: raw_gz_facebook
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key || '-' || campgn_name)"
+          - not_null:
+              column_name: "(date_date || '-' || campaign_key || '-' || campgn_name)"
 
       - name: criteo
         identifier: raw_gz_criteo
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key || '-' || campgn_name)"
+          - not_null:
+              column_name: "(date_date || '-' || campaign_key || '-' || campgn_name)"
